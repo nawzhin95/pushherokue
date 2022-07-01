@@ -4,9 +4,13 @@ import { fileURLToPath } from 'url';
 import hbs from 'hbs'
 import {getWeatherLocation} from './forcast.js'
 
+const port = process.env.PORT || 3000
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express()
+
+
 
 const publicPath = path.join(__dirname,'./public')
 const viewPath = path.join(__dirname,'./templates/views')
@@ -107,7 +111,7 @@ app.get('*',(req,res)=>{
 
 
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log("server is running")
 })
 
