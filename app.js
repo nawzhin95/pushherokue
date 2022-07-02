@@ -56,7 +56,6 @@ app.get('/contatus',(req,res)=>{
     // res.send("Hello we hear you")
 })
 
-
 app.get('/weather',(req,res)=>{
     
     if(!req.query.address){
@@ -64,8 +63,6 @@ app.get('/weather',(req,res)=>{
             error:"please inter address and location"
         })
     }
-
-
      getWeatherLocation(req.query.address,(data)=>{
         if(data==='error'){
             return res.send({
@@ -77,9 +74,6 @@ app.get('/weather',(req,res)=>{
             weather:data.days[0],
         })
      })
-
-   
-
 })
 
 
@@ -92,7 +86,6 @@ app.get('/product',(req,res)=>{
   
   
     console.log(req.query)
-
     res.send([req.query])
 })
 
