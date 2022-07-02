@@ -64,9 +64,9 @@ app.get('/weather',(req,res)=>{
         })
     }
      getWeatherLocation(req.query.address,(data)=>{
-        if(data==='error'){
+        if(data===400){
             return res.send({
-                error:"Invalid address"
+                error:'an error accure in passing location! please make sure you provide a target location'
             })
         }
         return res.send({

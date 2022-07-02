@@ -16,7 +16,7 @@ function getWeatherLocation(location,callback){
 
             // thars mean we have an error in passing a location for examle: !,"","jfkshfshfks"
           else if(response && response.statusCode === 400){
-                return callback('an error accure in passing location! please make sure you provide a target location')
+                return callback(400)
             }
 
         // make a body an object from string then return as a callback
